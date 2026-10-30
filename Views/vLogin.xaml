@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mpalloExamen.Views.vLogin"
+             Title="Login"
+             BackgroundColor="WhiteSmoke">
+
+    <!-- ESTILOS -->
+    <ContentPage.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="DarkBlue" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Purple" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+        </Style>
+
+        <Style x:Key="EstiloTitulo" TargetType="Label">
+            <Setter Property="TextColor" Value="Purple" />
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,20,0,30" />
+        </Style>
+
+        <Style x:Key="EstiloBotonGris" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Gray" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Margin" Value="0,30,0,20" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Image Source="primerp.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+            <Label Text="GYM APP" Style="{StaticResource EstiloTitulo}"/>
+
+            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="100, *" RowSpacing="10" ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Usuario:" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="txtUsuario" Placeholder="Ingrese usuario" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Contraseña:" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="txtContrasena" Placeholder="Ingrese contraseña" IsPassword="True" />
+
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Text="Iniciar sesión" 
+                        Clicked="OnLoginClicked"/>
+            </Grid>
+
+            <Button Text="Acerca de" 
+                    Clicked="OnAcercaDeClicked" 
+                    Style="{StaticResource EstiloBotonGris}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
